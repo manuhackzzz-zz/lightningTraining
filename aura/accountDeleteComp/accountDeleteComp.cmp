@@ -1,0 +1,10 @@
+<aura:component controller= "AccountControllerLtng" 
+                implements="lightning:actionOverride,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute type="Id" name="accId" default="{!v.recordId}"/>
+    <aura:attribute type="String" name="message"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+</aura:component>

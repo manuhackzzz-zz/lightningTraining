@@ -1,0 +1,10 @@
+<!-- Will handle the event -->
+<aura:component >
+    <aura:attribute name="messageFromEvent" type="String"/>
+    <aura:attribute name="numEvents" type="Integer" default="0"/>
+	<aura:handler event="c:testApplicationEvent" action="{!c.handleApplicationEvent}"/>
+    
+    Event message : {!v.messageFromEvent}<br/>
+    number of times fired : {!v.numEvents}
+    
+</aura:component>

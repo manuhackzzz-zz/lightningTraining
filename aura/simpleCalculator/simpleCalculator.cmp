@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="inputNumber" type="double"  />	
+    <aura:attribute name="output" type="double"  />	
+    <aura:attribute name="errorMessage" type="string"/>
+    <aura:attribute name="showError" type="boolean" default="false" />
+    
+    <aura:if isTrue="{!v.showError}" >
+        {!v.errorMessage}
+    </aura:if>
+    
+    <lightning:input label="Enter Number" value="{!v.inputNumber}"/>
+    
+    <lightning:button label="+" onclick="{!c.add}"/>
+    <lightning:button label="-" onclick="{!c.sub}"/>
+    <lightning:button label="x" onclick="{!c.mul}"/>
+    <lightning:button label="/" onclick="{!c.div}"/>
+    <lightning:button label="=" onclick="{!c.result}"/>
+    
+    {!v.output}
+    
+    
+    <!--<aura:handler name="change" value="{!v.inputNumber}" action="{!c.validateNumber}"/> -->
+    
+</aura:component>

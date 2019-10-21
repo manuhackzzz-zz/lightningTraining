@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                controller="fetchCasesFromAccount"
+                access="global" >
+    <aura:attribute name="ListAccount" type="Account[]"/>
+            
+    <aura:iteration items="{!v.ListAccount}" var="acc">
+        <a href="{!'#account/' + acc.Id}">
+            <p>{!acc.Name}</p>
+        </a>
+        <br/>
+    </aura:iteration>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    
+</aura:component>

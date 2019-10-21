@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                controller="fetchContactsController"
+                access="global" >
+    <aura:attribute name="ListContacts" type="Contact[]"/>
+    <aura:attribute name="accName" type="String"/>
+    
+    <lightning:input type="String" value="{!v.accName}"/>
+    
+    <lightning:button label="Get Contacts" onclick="{!c.doInit}"/>
+    
+    <aura:iteration items="{!v.ListContacts}" var="con">
+        <a href="{!'#contact/' + con.Id}">
+            <p>{!con.Name}</p>
+        </a>
+        <br/>
+    </aura:iteration>
+    
+</aura:component>

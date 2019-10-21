@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Amount" type="double"  />
+    <aura:attribute name="Duration" type="double" />
+    <aura:attribute name="Interest" type="double" />	
+    <aura:attribute name="Returns" type="double"  />
+    <aura:attribute name="errorMessage" type="string"/>
+    <aura:attribute name="showError" type="boolean" default="false" />
+    <aura:attribute name="pass" type="boolean" default="false" />
+    
+    <aura:if isTrue="{!v.showError}" >
+        {!v.errorMessage}
+    </aura:if>
+    
+    <lightning:input aura:id="AmountId" label="Enter Amount" value="{!v.Amount}"/>
+    <lightning:input aura:id="DurationId" label="Enter Duration" value="{!v.Duration}"/>
+    <lightning:input aura:id="InterestId" label="Enter Interest" value="{!v.Interest}" disabled="false"/>
+           
+    <lightning:button label="Calculate Return" onclick="{! c.calc }" disabled="{!v.pass}"/>
+    
+    <br/>
+    <lightning:formattedNumber value="{!v.Returns}" />
+    <br/>
+    
+    <aura:handler name="change" value="{!v.Amount}" action="{!c.validateAmount}"/>
+    <aura:handler name="change" value="{!v.Duration}" action="{!c.validateDuration}"/>
+    <aura:handler name="change" value="{!v.Interest}" action="{!c.validateInterest}"/>
+    
+</aura:component>

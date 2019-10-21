@@ -1,0 +1,7 @@
+<aura:component controller="seatchContactsController">
+    
+    <aura:registerEvent name="appSearchEvent" type="c:listContactsApplicationEvnt"/>
+    
+    <input type="String" onkeyup="{!c.search}"/>   
+    
+</aura:component>

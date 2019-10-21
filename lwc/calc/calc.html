@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Interest Calculator" icon-name="custom:custom14">
+
+    <div class="slds-m-around_medium">
+      <p>Hello, {result}!</p>
+      <lightning-input name="Amount" label="Amount" value={amount} onchange={calculate}></lightning-input>
+      <lightning-input name="Rate" label="Rate" value={rate} onchange={calculate}></lightning-input>
+      <lightning-input name="Duration" label="Duration" value={duration} onchange={calculate}></lightning-input>
+    </div>
+
+    <lightning-button variant="brand" label="Calculate" onclick={calculate}></lightning-button>
+    <br/>
+    Result = {result}
+  </lightning-card>
+</template>

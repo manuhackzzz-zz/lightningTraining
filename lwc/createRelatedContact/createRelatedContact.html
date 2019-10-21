@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Create Contact Record" icon-name="standard:record">
+          <div class="slds-m-around_medium">
+            <lightning-input label="Contact Id" disabled value={contactId}></lightning-input>
+            <lightning-input name="accId" label="Account Id" value={accountId} onchange={handleFormChange}></lightning-input>
+            <lightning-input name="conFname"  label="Contact First Name" value={firstName} onchange={handleFormChange}></lightning-input>
+            <lightning-input name="conLname"  label="Contact Last Name" value={lastName} onchange={handleFormChange} 
+            class="slds-m-bottom_x-small"></lightning-input>            
+            <lightning-button label="Create Contact" variant="brand" onclick={createContact}></lightning-button>
+          </div>
+    </lightning-card>
+</template>
+      

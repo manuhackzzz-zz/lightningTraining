@@ -1,0 +1,13 @@
+<aura:component controller="seatchContactsController">
+    
+    <aura:attribute name="contacts" type="Contact[]"/>
+    
+    <aura:iteration items="{!v.contacts}" var="contact">        
+        <a href="{! '#contact/' + contact.Id }">
+            <p>{!contact.Name}</p>
+        </a>       
+    </aura:iteration>
+    
+    <aura:handler event="c:listContactsApplicationEvnt" action="{!c.handleEvent}"/>
+    
+</aura:component>
